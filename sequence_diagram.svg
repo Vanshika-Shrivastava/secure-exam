@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1010" font-family="Helvetica,Arial,sans-serif" font-size="14">
+<defs><marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#222"/></marker></defs>
+<rect width="1100" height="1010" fill="#fff"/>
+<text x="550" y="32" text-anchor="middle" font-size="20" font-weight="bold">Secure Exam-Paper Exchange - Sequence of Events</text>
+<rect x="40" y="50" width="220" height="40" rx="6" fill="#e8f0fe" stroke="#1a4fa0"/>
+<text x="150" y="75" text-anchor="middle" font-weight="bold">Faculty (Sender)</text>
+<line x1="150" y1="90" x2="150" y2="980" stroke="#888" stroke-dasharray="5,4"/>
+<rect x="440" y="50" width="220" height="40" rx="6" fill="#e8f0fe" stroke="#1a4fa0"/>
+<text x="550" y="75" text-anchor="middle" font-weight="bold">Untrusted Channel / Attacker</text>
+<line x1="550" y1="90" x2="550" y2="980" stroke="#888" stroke-dasharray="5,4"/>
+<rect x="840" y="50" width="220" height="40" rx="6" fill="#e8f0fe" stroke="#1a4fa0"/>
+<text x="950" y="75" text-anchor="middle" font-weight="bold">Coordinator (Recipient)</text>
+<line x1="950" y1="90" x2="950" y2="980" stroke="#888" stroke-dasharray="5,4"/>
+<rect x="130" y="113" width="330" height="30" rx="5" fill="#f1f3f4" stroke="#777" stroke-dasharray="3,3"/>
+<text x="295.0" y="133" text-anchor="middle" font-style="italic">SETUP: RSA-4096 key pair; private key passphrase-encrypted</text>
+<rect x="640" y="159" width="330" height="30" rx="5" fill="#f1f3f4" stroke="#777" stroke-dasharray="3,3"/>
+<text x="805.0" y="179" text-anchor="middle" font-style="italic">SETUP: RSA-4096 key pair; private key passphrase-encrypted</text>
+<line x1="150" y1="222" x2="950" y2="222" stroke="#222" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="550.0" y="215" text-anchor="middle">public key (trusted channel, out-of-band)</text>
+<line x1="950" y1="268" x2="150" y2="268" stroke="#222" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="550.0" y="261" text-anchor="middle">public key (trusted channel, out-of-band)</text>
+<rect x="130" y="297" width="440" height="30" rx="5" fill="#fff4e5" stroke="#c77700"/>
+<text x="350.0" y="317" text-anchor="middle" fill="#222">1. random AES-256 session key K + fresh 96-bit nonce</text>
+<rect x="130" y="343" width="440" height="30" rx="5" fill="#fff4e5" stroke="#c77700"/>
+<text x="350.0" y="363" text-anchor="middle" fill="#222">2. (ciphertext, tag) = AES-GCM(K, nonce, paper, AAD=metadata)</text>
+<rect x="130" y="389" width="440" height="30" rx="5" fill="#fff4e5" stroke="#c77700"/>
+<text x="350.0" y="409" text-anchor="middle" fill="#222">3. EK = RSA-OAEP-SHA256(Recipient public key, K)</text>
+<rect x="130" y="435" width="440" height="30" rx="5" fill="#fff4e5" stroke="#c77700"/>
+<text x="350.0" y="455" text-anchor="middle" fill="#222">4. sig = RSA-PSS-SHA256(Sender private key, package)</text>
+<line x1="150" y1="498" x2="550" y2="498" stroke="#222" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="350.0" y="491" text-anchor="middle">package {metadata, EK, nonce, ciphertext, tag, sig}</text>
+<rect x="385.0" y="527" width="330" height="30" rx="5" fill="#f1f3f4" stroke="#777" stroke-dasharray="3,3"/>
+<text x="550.0" y="547" text-anchor="middle" font-style="italic">attacker may read / modify / replace / drop</text>
+<line x1="550" y1="590" x2="950" y2="590" stroke="#222" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="750.0" y="583" text-anchor="middle">package (possibly altered)</text>
+<rect x="530" y="619" width="440" height="30" rx="5" fill="#fff4e5" stroke="#c77700"/>
+<text x="750.0" y="639" text-anchor="middle" fill="#222">5. verify sig with TRUSTED sender public key</text>
+<rect x="530" y="665" width="440" height="30" rx="5" fill="#fdecea" stroke="#b3261e"/>
+<text x="750.0" y="685" text-anchor="middle" fill="#b3261e">invalid -&gt; REJECT (nothing decrypted, nothing written)</text>
+<rect x="530" y="711" width="440" height="30" rx="5" fill="#fff4e5" stroke="#c77700"/>
+<text x="750.0" y="731" text-anchor="middle" fill="#222">6. K = RSA-OAEP-decrypt(Recipient private key, EK)</text>
+<rect x="530" y="757" width="440" height="30" rx="5" fill="#fdecea" stroke="#b3261e"/>
+<text x="750.0" y="777" text-anchor="middle" fill="#b3261e">wrong key -&gt; REJECT</text>
+<rect x="530" y="803" width="440" height="30" rx="5" fill="#fff4e5" stroke="#c77700"/>
+<text x="750.0" y="823" text-anchor="middle" fill="#222">7. AES-GCM decrypt: verify tag over ciphertext + metadata</text>
+<rect x="530" y="849" width="440" height="30" rx="5" fill="#fdecea" stroke="#b3261e"/>
+<text x="750.0" y="869" text-anchor="middle" fill="#b3261e">tag mismatch -&gt; REJECT</text>
+<rect x="530" y="895" width="440" height="30" rx="5" fill="#fff4e5" stroke="#c77700"/>
+<text x="750.0" y="915" text-anchor="middle" fill="#222">8. all checks passed -&gt; write plaintext to inbox</text>
+</svg>
