@@ -1,0 +1,19 @@
+INSTITUTE OF TECHNOLOGY - END SEMESTER EXAMINATION (CONFIDENTIAL)
+Course: Cryptography and Network Security          Max Marks: 50     Duration: 2 h
+
+Section A (5 x 4 = 20 marks)
+ Q1. Differentiate between symmetric and asymmetric encryption with one example each.
+ Q2. Why must an AES-GCM nonce never be reused under the same key?
+ Q3. Explain how OAEP padding improves on textbook RSA.
+ Q4. What security properties does a digital signature provide?
+ Q5. Compare RSA-PKCS#1 v1.5 signatures with RSA-PSS.
+
+Section B (3 x 10 = 30 marks)
+ Q6. Design a hybrid encryption scheme for sending a large file to a remote party.
+     Justify each primitive and the order of operations (sign-then-encrypt vs encrypt-then-sign).
+ Q7. An attacker can read and modify traffic. List three active attacks on a naive
+     'encrypt-only' file-transfer protocol and how authenticated encryption defeats them.
+ Q8. Explain the role of a trusted public-key distribution channel and the consequence
+     of a substituted public key.
+
+*** Do not distribute before the examination ***

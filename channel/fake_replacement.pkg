@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "version": 1,
+    "package_id": "383872ca-db42-454e-93ff-4fe85a11b8de",
+    "filename": "fake_paper.txt",
+    "sender_id": "faculty",
+    "recipient_id": "coordinator",
+    "created_utc": "2026-10-29T16:02:26+00:00",
+    "plaintext_size": 46,
+    "algorithms": {
+      "symmetric": "AES-256-GCM",
+      "key_wrap": "RSA-OAEP-SHA256",
+      "signature": "RSA-PSS-SHA256"
+    }
+  },
+  "encrypted_session_key": "gEUKXjGlTW4lbdMRp/x/ojqnV3TZAEFlzXsS/g0fOTeQ/nGQmYVXki/2Hk0tJM8eKk7iPPeC440sEIab0aKtJJkw1WY75D1V0WvOucqJubt33Qtp6ZEFSQAVTqUXPzOA2h+ax2Aha/tTAEcKv7s+o6habR/cZdbWFOOIc4StpIPtGNstBibpDG+1cWpJ+lBkCpTdhhqNOE8NX1YY7xGZvN0QQaAqfdwgAWkOGBpGSur3pZ+0AB2uT/zir7PA+2gB+UpxEZsUEavEtz2o6zQIGmm9dYtoDgNCorvmnJmIegnQzz1AwSKKz4/mi9FGAcDDeyhKU8wZdlkWGz/go05MVyOUU8qFyZscksF71hVZ9VWkIwmT+/ey5j3krXRSSGL/NvelY/4Lc1BySpFBx8n0CLAoNocJEvp/RkhdB+bQgtmQfpRX16AMT1b51sifbpNImO4BFblgfYFv5R+9hdIq6wO6UmDZstq6Y3GOGVFkWhj39LTCUTlkdPtAMEG2SSnqPczr4t+Aew7SiIo7e72f5tCsMFeY1PsgGU/S/sSRCw6jZXvLW/vOdZXqsJZoeD7C1RgTPHZwPiFUJ23ekh92nADxEcUzT/wop2BQGEbN/L0YNF3ukt72Q58K52PiOWX8Z6CPsKgSXwZoS2cLuvbWmXSaSRiqPM9wvOZcBsDkBNk=",
+  "nonce": "sJ0YBcF8tUAljv2M",
+  "ciphertext": "KkADBQ3YzrQslfduoWmJl0rY+VMwpJJZDuvOcZ8nTAEsff5hy6i3jG5QaXyVPw==",
+  "tag": "GSjk7GgBM/mlBOg5a0JNKA==",
+  "signature": "UBE9FWqyELU+xWWjW2U2JzWKgQXV7Jm5HhD3iMVaf5OSHTkqLoUPsNaZ3t7N7j9XjOGD1AfmgfWXnOph+USMxjjEuNcTSmJyu5dUGFyYP/LHVuAF400w7J/XBfzdiwRCM0Ir9hV+2MXvjAd+Fw2C5F/RQEKNTvWfinnhvIqUX5BSHZcWg2voA0X89IhXGCC5NY08844Fa/sYpcu9gS/q5ICSEgHrlB1Mump6E4id+karOfWlS8mdppokwvRtOku8WZzBySpqIzncy97xzlK65U0Cgf3h7D7tDhpAnkLnZevp7uyIcCtKdHABC5E++n474Ptp3lZkVyF5sWXh094TZv47IZy/r5Z6O/roro6N1m0MlpkBYxDSvOeX9j+6BqT77xfJfqV0r76D8NhHkyqXHLSyXOuxIJaauIrvO025eRkGQbvEb7tz2KsK/88rsXzrHtFzJp+o9LK7Y1X0MKuLklsoN6/FGRz82PBm3hucCZ4ryvlpmbEfiqGN18rl+8lrCGz0lHuhx1oomaGzUyFrHqQbRPNGfKEcv4xvYjckBvFNoenqrKOkGmHarV9MpaFgrIkbOQhxzATnMArkTG9m0XqoNU/C7okoX0+iMY9+mmyaM5I+0R42beS5+CL2tZ7tGVb7BEqUvmIUu2DxZsqoI5dVZ9YnW2+89BEbWOUGYTI="
+}
